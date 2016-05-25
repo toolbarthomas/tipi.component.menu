@@ -1,8 +1,8 @@
 $menu-horizontal-gutter: 10px !default;
 $menu-vertical-gutter: 10px !default;
 
-$menu-item-font-size: 'base-font-size';
-$menu-subitem-font-size: false;
+$menu-item-font-size: 'base-font-size' !default;
+$menu-subitem-font-size: false !default;
 
 $menu-dropdown: true !default;
 $menu-dropdown-z-index: false !default;
