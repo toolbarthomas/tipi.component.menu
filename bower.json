@@ -1,0 +1,16 @@
+{
+  "name": "tipi.component.menu",
+  "homepage": "https://github.com/toolbarthomas/tipi.component.menu",
+  "authors": [
+    "Thomas van der Velde <contact@toolbarthomas.net>"
+  ],
+  "description": "Menu component for tipi",
+  "keywords": [
+    "toolbarthomas",
+    "modular",
+    "tipi",
+    "menu"
+  ],
+  "license": "MIT",
+  "main": "_tipi.component.menu.scss"
+}
