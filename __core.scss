@@ -114,6 +114,33 @@
 		}
 	}
 
+	.menu--vertical {
+		> ul > li,
+		> ol > li,
+		li {
+			display: block;
+		}
+
+		> ul ,
+		> ol {
+			> li {
+				@if $menu-horizontal-gutter != false {
+					margin-left: 0;
+					margin-right: 0;
+				}
+
+				> a {
+					@if $menu-horizontal-gutter != false {
+						margin-left: 0;
+						margin-right: 0;
+						padding-left: 0;
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+
 	@if $menu-dropdown == true {
 		.menu-dropdown {
 			display: none;
