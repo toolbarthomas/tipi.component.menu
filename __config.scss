@@ -1,8 +1,14 @@
-$menu-horizontal-gutter:		10px !default;
-$menu-vertical-gutter:			10px !default;
+$menu-item-horizontal-gutter:		10px !default;
+$menu-item-vertical-gutter:			10px !default;
 
-$menu-item-font-size:			'default-font-size' !default;
-$menu-subitem-font-size:		false !default;
+$menu-item-active-class:			'.__menu-item--active' !default;
+$menu-item-font-size:				'default-font-size' !default;
+
+$menu-subitem-font-size:			false !default;
+$menu-subitem-horizontal-gutter:	10px !default;
+$menu-subitem-vertical-gutter:		10px !default;
+
 
 $menu-dropdown:					true !default;
+$menu-dropdown-hover:			true !default;
 $menu-dropdown-z-index:			false !default;
