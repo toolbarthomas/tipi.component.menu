@@ -146,7 +146,6 @@
 			display: none;
 			position: absolute;
 			left: 0;
-			text-align: left;
 
 			.menu--center & {
 				left: 50%;
@@ -170,6 +169,8 @@
 		}
 
 		.menu-dropdown-wrapper {
+			position: relative;
+
 			li {
 				display: block;
 
