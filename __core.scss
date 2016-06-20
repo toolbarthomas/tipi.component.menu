@@ -170,16 +170,6 @@
 
 		.menu-dropdown-wrapper {
 			position: relative;
-
-			li {
-				display: block;
-
-				@if $menu-subitem-vertical-gutter != false {
-					+ li {
-						margin-top: $menu-subitem-vertical-gutter;
-					}
-				}
-			}
 		}
 
 		@if $menu-item-active-class != false {
