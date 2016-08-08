@@ -120,25 +120,6 @@
 		li {
 			display: block;
 		}
-
-		> ul ,
-		> ol {
-			> li {
-				@if $menu-item-horizontal-gutter != false {
-					margin-left: 0;
-					margin-right: 0;
-				}
-
-				> a {
-					@if $menu-item-horizontal-gutter != false {
-						margin-left: 0;
-						margin-right: 0;
-						padding-left: 0;
-						padding-right: 0;
-					}
-				}
-			}
-		}
 	}
 
 	@if $menu-dropdown == true {
