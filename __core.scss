@@ -120,6 +120,25 @@
 		li {
 			display: block;
 		}
+
+		> ul ,
+		> ol {
+			> li {
+				@if $menu-item-horizontal-gutter != false {
+					margin-left: -$menu-item-horizontal-gutter;
+					margin-right: -$menu-item-horizontal-gutter;
+				}
+
+				> a {
+					@if $menu-item-horizontal-gutter != false {
+						margin-left: 0;
+						margin-right: 0;
+						padding-left: $menu-item-horizontal-gutter;
+						padding-right: $menu-item-horizontal-gutter;
+					}
+				}
+			}
+		}
 	}
 
 	@if $menu-dropdown == true {
