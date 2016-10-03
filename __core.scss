@@ -77,64 +77,110 @@
 		}
 	}
 
-	.menu--right {
-		> ol,
-		> ul {
-			text-align: right;
-		}
-	}
-
-	.menu--center {
-		> ol,
-		> ul {
-			text-align: center;
-		}
-	}
-
-	.menu--justify {
-		> ul,
-		> ol {
-			text-align: justify;
-
-			&:after {
-				content: " ";
-				width: 100%;
-				display: inline-block;
-				height: 1px;
-				margin-bottom: -1px;
-			}
-
-			> li {
-				@if $menu-item-horizontal-gutter != false {
-					margin: 0;
-					padding-left: $menu-item-horizontal-gutter;
-					padding-right: $menu-item-horizontal-gutter;
-				}
+	@if $menu-right == true {
+		.menu--right {
+			> ol,
+			> ul {
+				text-align: right;
 			}
 		}
 	}
 
-	.menu--vertical {
-		> ul > li,
-		> ol > li,
-		li {
-			display: block;
+	@if $menu-center == true {
+		.menu--center {
+			> ol,
+			> ul {
+				text-align: center;
+			}
 		}
+	}
 
-		> ul ,
-		> ol {
-			> li {
-				@if $menu-item-horizontal-gutter != false {
-					margin-left: -$menu-item-horizontal-gutter;
-					margin-right: -$menu-item-horizontal-gutter;
-				}
+	@if $menu-vertical == true {
+		.menu--vertical {
+			> ul > li,
+			> ol > li,
+			li {
+				display: block;
+			}
 
-				> a {
+			> ul ,
+			> ol {
+				> li {
 					@if $menu-item-horizontal-gutter != false {
-						margin-left: 0;
-						margin-right: 0;
+						margin-left: -$menu-item-horizontal-gutter;
+						margin-right: -$menu-item-horizontal-gutter;
+					}
+
+					> a {
+						@if $menu-item-horizontal-gutter != false {
+							margin-left: 0;
+							margin-right: 0;
+							padding-left: $menu-item-horizontal-gutter;
+							padding-right: $menu-item-horizontal-gutter;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@if $menu-justify == true {
+		.menu--justify {
+			> ul,
+			> ol {
+				text-align: justify;
+
+				&:after {
+					content: " ";
+					width: 100%;
+					display: inline-block;
+					height: 1px;
+					margin-bottom: -1px;
+				}
+
+				> li {
+					@if $menu-item-horizontal-gutter != false {
+						margin: 0;
 						padding-left: $menu-item-horizontal-gutter;
 						padding-right: $menu-item-horizontal-gutter;
+					}
+				}
+			}
+		}
+	}
+
+	@if $menu-tabs == true {
+		.menu--tabs {
+			> ul,
+			> ol {
+				text-align: left;
+				width: 100%;
+				display: table;
+
+				@if $menu-tabs-table-layout != false {
+					table-layout: $menu-tabs-table-layout;
+				}
+
+				> li {
+					display: table-cell;
+					width: auto;
+					height: 0;
+					vertical-align: middle;
+					text-align: center;
+
+					> a {
+						display: block;
+						padding: 0;
+						margin: 0;
+						@if $menu-item-vertical-gutter != false {
+							padding-top: $menu-item-vertical-gutter;
+							padding-bottom: $menu-item-vertical-gutter;
+						}
+
+						@if $menu-item-horizontal-gutter != false {
+							padding-right: $menu-item-horizontal-gutter;
+							padding-left: $menu-item-horizontal-gutter;
+						}
 					}
 				}
 			}

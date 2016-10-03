@@ -8,7 +8,14 @@ $menu-subitem-font-size:			false !default;
 $menu-subitem-horizontal-gutter:	10px !default;
 $menu-subitem-vertical-gutter:		10px !default;
 
+$menu-right:					true !default;
+$menu-center:					true !default;
+$menu-vertical:					true !default;
+$menu-justify:					true !default;
 
-$menu-dropdown:					true !default;
-$menu-dropdown-hover:			true !default;
+$menu-tabs:						true !default;
+$menu-tabs-table-layout:		fixed !default;
+
+$menu-dropdown:					false !default;
+$menu-dropdown-hover:			false !default;
 $menu-dropdown-z-index:			false !default;
