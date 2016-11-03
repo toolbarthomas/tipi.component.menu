@@ -1,0 +1,106 @@
+@mixin menu-gutter (
+	$selector: null,
+	$type: false,
+	$horizontal-gutter: $menu-item-horizontal-gutter,
+	$vertical-gutter: $menu-item-vertical-gutter,
+	$sub-horizontal-gutter: $menu-subitem-horizontal-gutter,
+	$sub-vertical-gutter: $menu-subitem-vertical-gutter,
+	$enable-margin: false
+) {
+	@if $type == false or $type == 'horizontal' {
+		.menu {
+			&#{$selector} {
+				> ol,
+				> ul {
+					> li {
+						@if $horizontal-gutter != false {
+							> a {
+								padding-left: $horizontal-gutter;
+								padding-right: $horizontal-gutter;
+							}
+						}
+
+						@if $vertical-gutter != false {
+							> a {
+								padding-top: $vertical-gutter;
+								padding-bottom: $vertical-gutter;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@if $type == false or $type == 'vertical' {
+		@if $menu-vertical == true {
+			.menu--vertical {
+				&#{$selector} {
+					> li {
+						@if $horizontal-gutter != false {
+							> a {
+								padding-left: $horizontal-gutter;
+								padding-right: $horizontal-gutter;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@if $type == false or $type == 'justify' {
+		@if $menu-justify == true {
+			.menu--justify {
+				&#{$selector} {
+					> ul,
+					> ol {
+						> li {
+							@if $horizontal-gutter != false {
+								padding-left: $horizontal-gutter;
+								padding-right: $horizontal-gutter;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@if $type == false or $type == 'tabs' {
+		@if $menu-tabs == true {
+			.menu--tabs {
+				&#{$selector} {
+					> ul,
+					> ol {
+						> li {
+							> a {
+								@if $vertical-gutter != false {
+									padding-top: $vertical-gutter;
+									padding-bottom: $vertical-gutter;
+								}
+
+								@if $horizontal-gutter != false {
+									padding-right: $horizontal-gutter;
+									padding-left: $horizontal-gutter;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@if $menu-dropdown == true {
+		.menu {
+			&#{$selector} {
+				.menu-dropdown {
+					@if $sub-vertical-gutter != false {
+						padding-top: $sub-vertical-gutter;
+					}
+				}
+			}
+		}
+	}
+}
