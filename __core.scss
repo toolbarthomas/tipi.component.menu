@@ -76,7 +76,10 @@
 		.menu--center {
 			> ol,
 			> ul {
-				text-align: center;
+				&,
+				> li > a {
+					text-align: center;
+				}
 			}
 		}
 	}
