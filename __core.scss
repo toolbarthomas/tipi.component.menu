@@ -1,95 +1,83 @@
 @mixin core_menu {
 	.menu {
+		text-align: left;
+
 		ol,
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			text-align: left;
-
-			> li {
-				margin: 0;
-				padding: 0;
-				text-align: left;
-				line-height: normal;
-				position: relative;
-
-				> a {
-					position: relative;
-					display: block;
-					font-size: inherit;
-
-					&,
-					&:active,
-					&:focus,
-					&:hover {
-						text-decoration: none;
-					}
-				}
-			}
-		}
-
-		> ol,
-		> ul {
-			display: block;
-			font-size: 0;
-
-			> li {
-				display: inline-block;
-				vertical-align: middle;
-
-				> a {
-					-webkit-font-smoothing: antialiased;
-					-moz-osx-font-smoothing: grayscale;
-				}
-			}
-		}
-
+		ul,
 		li {
 			display: block;
 			margin: 0;
 			padding: 0;
+		}
+
+		ol,
+		ul {
+			list-style: none;
+		}
+
+		li {
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			line-height: normal;
 			@include responsive-font-size($menu-item-font-size);
 
-			@if $menu-subitem-font-size != false {
-				li {
-					@include responsive-font-size($menu-subitem-font-size);
+			> a {
+				display: block;
+				position: relative;
+				font-size: inherit;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+
+				&,
+				&:active,
+				&:focus,
+				&:hover {
+					text-decoration: none;
 				}
 			}
 		}
 
 		a {
+			text-align: inherit;
 			color: inherit;
+		}
+
+		> ol,
+		> ul {
+			font-size: 0;
+
+			> li {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+			}
 		}
 	}
 
 	@if $menu-right == true {
 		.menu--right {
-			> ol,
-			> ul {
-				text-align: right;
-			}
+			text-align: right;
 		}
 	}
 
 	@if $menu-center == true {
 		.menu--center {
-			> ol,
-			> ul {
-				&,
-				> li > a {
-					text-align: center;
-				}
+			&,
+			> ul > li > a,
+			> ol > li > a {
+				text-align: center;
 			}
 		}
 	}
 
 	@if $menu-vertical == true {
 		.menu--vertical {
-			> ul > li,
-			> ol > li,
-			li {
-				display: block;
+			> ul,
+			> ol {
+				> li {
+					display: block;
+				}
 			}
 		}
 	}
@@ -107,32 +95,27 @@
 					height: 1px;
 					margin-bottom: -1px;
 				}
-
-				> li {
-					display: inline-block;
-				}
 			}
 		}
 	}
 
 	@if $menu-tabs == true {
-		.menu--tabs {
+		.menu--distribute {
 			> ul,
 			> ol {
-				text-align: left;
 				width: 100%;
 				display: table;
-
-				@if $menu-tabs-table-layout != false {
-					table-layout: $menu-tabs-table-layout;
-				}
+				table-layout: fixed;
+				height: 100%;
 
 				> li {
 					display: table-cell;
 					width: auto;
-					height: 0;
-					vertical-align: middle;
-					text-align: center;
+					height: 100%;
+
+					> a {
+						text-align: center;
+					}
 				}
 			}
 		}
@@ -144,6 +127,7 @@
 			position: absolute;
 			left: 0;
 			text-align: left;
+			min-width: 100%;
 
 			.menu--center & {
 				left: 50%;
@@ -157,42 +141,21 @@
 				left: auto;
 			}
 
-			@if $menu-dropdown-z-index != false {
-				z-index: $menu-dropdown-z-index;
+			li:hover &,
+			&.__menu-dropdown--active {
+				display: block;
 			}
-
-			// @if $menu-subitem-vertical-gutter != false {
-			// 	padding-top: $menu-subitem-vertical-gutter;
-			// }
 		}
 
 		.menu-dropdown-wrapper {
 			position: relative;
 		}
-
-		@if $menu-item-active-class != false {
-			#{$menu-item-active-class} {
-				> .menu-dropdown {
-					display: block;
-				}
-			}
-		}
-
-		@if $menu-dropdown-hover != false {
-			.no-touchevents li:hover {
-				> .menu-dropdown {
-					display: block;
-				}
-			}
-		}
 	}
 
 	@include menu-gutter(
 		$selector: null,
-		$type: false,
 		$horizontal-gutter: $menu-item-horizontal-gutter,
 		$vertical-gutter: $menu-item-vertical-gutter,
-		$sub-horizontal-gutter: $menu-subitem-horizontal-gutter,
-		$sub-vertical-gutter: $menu-subitem-vertical-gutter
+		$dropdown-offset: $menu-dropdown-offset
 	);
 }

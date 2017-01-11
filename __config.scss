@@ -1,21 +1,12 @@
 $menu-item-horizontal-gutter:		10px !default;
 $menu-item-vertical-gutter:			10px !default;
+$menu-dropdown-offset:				15px !default;
 
-$menu-item-active-class:			'.__menu-item--active' !default;
 $menu-item-font-size:				'default-font-size' !default;
 
-$menu-subitem-font-size:			false !default;
-$menu-subitem-horizontal-gutter:	10px !default;
-$menu-subitem-vertical-gutter:		10px !default;
-
-$menu-right:					true !default;
-$menu-center:					true !default;
-$menu-vertical:					true !default;
-$menu-justify:					true !default;
-
-$menu-tabs:						true !default;
-$menu-tabs-table-layout:		fixed !default;
-
-$menu-dropdown:					false !default;
-$menu-dropdown-hover:			false !default;
-$menu-dropdown-z-index:			false !default;
+$menu-right:						true !default;
+$menu-center:						true !default;
+$menu-vertical:						true !default;
+$menu-justify:						true !default;
+$menu-tabs:							true !default;
+$menu-dropdown:						true !default;
