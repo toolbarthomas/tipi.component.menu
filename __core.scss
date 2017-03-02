@@ -141,7 +141,7 @@
 				left: auto;
 			}
 
-			li:hover &,
+			li:hover > &,
 			&.__menu-dropdown--active {
 				display: block;
 			}
