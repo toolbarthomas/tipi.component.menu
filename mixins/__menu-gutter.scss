@@ -23,9 +23,11 @@
 				}
 			}
 
-			@if $dropdown-offset != false {
-				.menu-dropdown {
-					padding-top: $dropdown-offset;
+			@if $menu-dropdown != false {
+				@if $dropdown-offset != false {
+					.menu-dropdown {
+						padding-top: $dropdown-offset;
+					}
 				}
 			}
 		}
